@@ -20,7 +20,7 @@ jobs:
       # Note: if the API request fails, the request response json will not have an "access_token" field and
       # the DATABRICKS_TOKEN env variable will be empty.
       - name: Generate and save AAD Token
-        run: |
+        run:
           echo "DATABRICKS_TOKEN=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
             https://login.microsoftonline.com/${{ secrets.861d92d1-d3e5-4e48-826e-230591e03be6 }}/oauth2/v2.0/token \
             -d 'client_id=${{ secrets.ec944b04-6caa-401d-bc7e-9ef2f2b2c6b6 }}' \
